@@ -1,0 +1,464 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>linkedin/md-salman-24b/</title>
+</head>
+
+<body>
+  <!-- Header Starts -->
+  <div class="header">
+    <div class="header__left">
+      <img
+        src="https://media-exp1.licdn.com/dms/image/C4D03AQEZcDAKD5mATQ/profile-displayphoto-shrink_800_800/0/1662196565683?e=1670457600&v=beta&t=9QwJpIDhgSz-H_8Jb9OtoPkZ5ZOuWlAitsceeba77_U"
+        alt="" />
+      <div class="header__search">
+        <i class="material-icons"> search </i>
+        <input type="text" />
+      </div>
+    </div>
+
+    <div class="header__right">
+      <div class="headerOption">
+        <i class="material-icons headerOption__icon"> home </i>
+        <h3>Home</h3>
+      </div>
+      <div class="headerOption">
+        <i class="material-icons headerOption__icon"> supervisor_account </i>
+        <h3>My Network</h3>
+      </div>
+      <div class="headerOption">
+        <i class="material-icons headerOption__icon"> business_center </i>
+        <h3>Jobs</h3>
+      </div>
+      <div class="headerOption">
+        <i class="material-icons headerOption__icon"> chat </i>
+        <h3>Messaging</h3>
+      </div>
+      <div class="headerOption">
+        <i class="material-icons headerOption__icon"> notifications </i>
+        <h3>Notifications</h3>
+      </div>
+      <div class="headerOption">
+        <i class="material-icons headerOption__icon"> account_circle </i>
+        <h3>Me</h3>
+      </div>
+    </div>
+  </div>
+  <!-- Header Ends -->
+
+  <!-- Main Body Starts -->
+  <div class="body__main">
+    <!-- Sidebar Starts -->
+    <div class="sidebar">
+      <div class="sidebar__top">
+        <img
+          src="data:image/jpeg;base64,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"
+          alt="" />
+        <i class="material-icons sidebar__topAvatar"> account_circle </i>
+        <h2>MD Salman</h2>
+        <h4>salmankhan1862002@gmail.com</h4>
+        <h3>Java Dovelepor</h3>
+      </div>
+
+      <div class="sidebar__stats">
+        <div class="sidebar__stat">
+          <p>Who Viewed You</p>
+          <p class="sidebar__statNumber">2,453</p>
+        </div>
+        <div class="sidebar__stat">
+          <p>Views on post</p>
+          <p class="sidebar__statNumber">2,650</p>
+        </div>
+      </div>
+
+      <div class="sidebar__bottom">
+        <p>Recent</p>
+        <div class="sidebar__recentItem">
+          <span class="sidebar__hash">#</span>
+          <p>Java </p>
+        </div>
+        <div class="sidebar__recentItem">
+          <span class="sidebar__hash">#</span>
+          <p>programming</p>
+        </div>
+        <div class="sidebar__recentItem">
+          <span class="sidebar__hash">#</span>
+          <p>softwareEngineering</p>
+        </div>
+        <div class="sidebar__recentItem">
+          <span class="sidebar__hash">#</span>
+          <p>Web Doveloper </p>
+        </div>
+        <div class="sidebar__recentItem">
+          <span class="sidebar__hash">#</span>
+          <p>developer</p>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar Ends -->
+
+    <!-- Feed Starts -->
+    <div class="feed">
+      <div class="feed__inputContainer">
+        <div class="feed__input">
+          <i class="material-icons"> create </i>
+          <form>
+            <input type="text" />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+
+        <div class="feed__inputOptions">
+          <div class="inputOption">
+            <i style="color: #70b5f9" class="material-icons"> insert_photo </i>
+            <h4>Photo</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: #e7a33e" class="material-icons"> subscriptions </i>
+            <h4>Video</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: #c0cbcd" class="material-icons"> event_note </i>
+            <h4>Event</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: #7fc15e" class="material-icons"> calendar_view_day </i>
+            <h4>Write Article</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Starts -->
+      <div class="post">
+        <div class="post__header">
+          <i class="material-icons sidebar__topAvatar"> account_circle </i>
+          <div class="post__info">
+            <h2>Irshad chohan </h2>
+            <p>Job Description</p>
+          </div>
+        </div>
+
+        <div class="post__body">
+          <p>Dear Candidate,
+
+            I am Recruiting at Infosys, and I came across your profile.<br>
+             As we’re currently looking for JAVA Developers
+             <br>
+
+            and I think you could be a good fit.<br>
+
+
+            A day in the life of an Infoscion
+            • As part of the Infosys Delivery team, <br>
+            you will work on implementing designs, developing high quality
+            programs and systems, <br>
+            partnering with our clients to ensure high quality deliverables.
+
+
+
+
+            <br>
+            Irshad chohan
+          </p>
+        </div>
+
+        <div class="feed__inputOptions">
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> thumb_up </i>
+            <h4>Like</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> comment </i>
+            <h4>Comment</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> share </i>
+            <h4>Share</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> send </i>
+            <h4>Send</h4>
+          </div>
+        </div>
+      </div>
+      <!-- Post Ends -->
+
+      <!-- Post Starts -->
+      <div class="post">
+        <div class="post__header">
+          <i class="material-icons sidebar__topAvatar"> account_circle </i>
+          <div class="post__info">
+            <h2>MD Salman</h2>
+            <p>Job Description</p>
+          </div>
+        </div>
+
+        <div class="post__body">
+          <p>Attention Job Seekers,</p>
+
+           <p>  We are recruiting for NETHERLANDS & GERMANY for many positions.
+            Also we are providing permanent residents in these countries.</p>
+        </div>
+
+        <div class="feed__inputOptions">
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> thumb_up </i>
+            <h4>Like</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> comment </i>
+            <h4>Comment</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> share </i>
+            <h4>Share</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> send </i>
+            <h4>Send</h4>
+          </div>
+        </div>
+      </div>
+      <!-- Post Ends -->
+
+      <!-- Post Starts -->
+      <div class="post">
+        <div class="post__header">
+          <i class="material-icons sidebar__topAvatar"> account_circle </i>
+          <div class="post__info">
+            <h2>MD Salman</h2>
+            <p>Job Description</p>
+          </div>
+        </div>
+
+        <div class="post__body">
+          <p>!! Hiring !! Hiring !! Hiring !! Hiring !!
+            <br>
+            <br>
+
+            Job Title :: Amazon Aasistant HR <br>
+
+            Qualification :: Graduation<br>
+
+            Location :: Permanent Work From Home</p>
+        </div>
+
+        <div class="feed__inputOptions">
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> thumb_up </i>
+            <h4>Like</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> comment </i>
+            <h4>Comment</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> share </i>
+            <h4>Share</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> send </i>
+            <h4>Send</h4>
+          </div>
+        </div>
+      </div>
+      <!-- Post Ends -->
+
+      <!-- Post Starts -->
+      <div class="post">
+        <div class="post__header">
+          <i class="material-icons sidebar__topAvatar"> account_circle </i>
+          <div class="post__info">
+            <h2>Irshad chohan</h2>
+            <p>Job Description</p>
+          </div>
+        </div>
+
+        <div class="post__body">
+          <p>Hello Everyone <br>
+            Hiring for Chat Executive for international process <br>
+            Currently WFH <br>
+            1year of Exp is must</p>
+        </div>
+
+        <div class="feed__inputOptions">
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> thumb_up </i>
+            <h4>Like</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> comment </i>
+            <h4>Comment</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> share </i>
+            <h4>Share</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> send </i>
+            <h4>Send</h4>
+          </div>
+        </div>
+      </div>
+      <!-- Post Ends -->
+
+      <!-- Post Starts -->
+      <div class="post">
+        <div class="post__header">
+          <i class="material-icons sidebar__topAvatar"> account_circle </i>
+          <div class="post__info">
+            <h2>Imran khan</h2>
+            <p>Job Description</p>
+          </div>
+        </div>
+
+        <div class="post__body">
+          <p>- Meta Front-End Developer Professional Certificate <br>
+            https://bit.ly/3So0AXm</p>
+        </div>
+
+        <div class="feed__inputOptions">
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> thumb_up </i>
+            <h4>Like</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> comment </i>
+            <h4>Comment</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> share </i>
+            <h4>Share</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> send </i>
+            <h4>Send</h4>
+          </div>
+        </div>
+      </div>
+      <!-- Post Ends -->
+
+      <!-- Post Starts -->
+      <div class="post">
+        <div class="post__header">
+          <i class="material-icons sidebar__topAvatar"> account_circle </i>
+          <div class="post__info">
+            <h2>MD Salman</h2>
+            <p>Job Description</p>
+          </div>
+        </div>
+
+        <div class="post__body">
+          <p>Companies should take Exit Interviews seriously because <br>
+            - Marta hua insaan aur jaata hua employee kabhi jhooth nahi bolta.</p>
+        </div>
+
+        <div class="feed__inputOptions">
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> thumb_up </i>
+            <h4>Like</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> comment </i>
+            <h4>Comment</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> share </i>
+            <h4>Share</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> send </i>
+            <h4>Send</h4>
+          </div>
+        </div>
+      </div>
+      <!-- Post Ends -->
+
+      <!-- Post Starts -->
+      <div class="post">
+        <div class="post__header">
+          <i class="material-icons sidebar__topAvatar"> account_circle </i>
+          <div class="post__info">
+            <h2>Irshad chohan</h2>
+            <p>Job Description</p>
+          </div>
+        </div>
+
+        <div class="post__body">
+          <p>I got a phone call from #mom at 3 am. <br>
+            I picked it up, panicking, and asked What happened?</p>
+        </div>
+
+        <div class="feed__inputOptions">
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> thumb_up </i>
+            <h4>Like</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> comment </i>
+            <h4>Comment</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> share </i>
+            <h4>Share</h4>
+          </div>
+          <div class="inputOption">
+            <i style="color: gray" class="material-icons"> send </i>
+            <h4>Send</h4>
+          </div>
+        </div>
+      </div>
+      <!-- Post Ends -->
+    </div>
+    <!-- Feed Ends -->
+
+    <!-- Widgets Starts -->
+    <div class="widgets">
+      <div class="widgets__header">
+        <h2>LinkedIn Clone</h2>
+        <i class="material-icons"> info </i>
+      </div>
+      <div class="widgets__article">
+        <div class="widgets__articleLeft">
+          <i class="material-icons"> fiber_manual_record </i>
+        </div>
+        <div class="widgets__articleRight">
+          <h4> Salman Coding LinkedIn Clone</h4>
+          <p>Top news - 4500 readers</p>
+        </div>
+      </div>
+
+      <div class="widgets__article">
+        <div class="widgets__articleLeft">
+          <i class="material-icons"> fiber_manual_record </i>
+        </div>
+        <div class="widgets__articleRight">
+          <h4>Salman Coding LinkedIn Clone</h4>
+          <p>Top news - 4500 readers</p>
+        </div>
+      </div>
+
+      <div class="widgets__article">
+        <div class="widgets__articleLeft">
+          <i class="material-icons"> fiber_manual_record </i>
+        </div>
+        <div class="widgets__articleRight">
+          <h4>Salman Coding LinkedIn Clone</h4>
+          <p>Top news - 4500 readers</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Widgets Ends -->
+  </div>
+  <!-- Main Body Ends -->
+</body>
+
+</html>
