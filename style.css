@@ -24,7 +24,7 @@ body{
 	padding: 20px;
 }
 .profile{
-	width: 120px;
+	width: 80px;
 	border-radius: 50%;
 }
 .p1{
@@ -55,7 +55,7 @@ body{
 }
 .line{
 	border-left: 1px solid #c7c7c7;
-  height: 1000px;
+  height: 1600px;
   width: 2%;
   margin-top: 30px;
   float:left;
