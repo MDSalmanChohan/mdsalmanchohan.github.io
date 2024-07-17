@@ -1,1 +1,183 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    #employeeForm {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    #employeeForm input, #employeeForm select {
+      flex: 1;
+      padding: 10px;
+      margin-right: 10px;
+    }
+    #employeeForm button {
+      padding: 10px 20px;
+    }
+    #employeeList {
+      list-style-type: none;
+      padding: 0;
+    }
+    .employee-item {
+      display: flex;
+      justify-content: space-between;
+      background: #fff;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .employee-item button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    #searchInput, #filterSelect, #sortSelect {
+      margin-bottom: 20px;
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <h1>Employee Management System</h1>
+  <form id="employeeForm">
+    <input type="text" id="employeeName" placeholder="Employee Name">
+    <input type="number" id="employeeAge" placeholder="Employee Age">
+    <select id="employeeDepartment">
+      <option value="">Select Department</option>
+      <option value="HR">HR</option>
+      <option value="Engineering">Engineering</option>
+      <option value="Marketing">Marketing</option>
+    </select>
+    <button type="submit">Add Employee</button>
+  </form>
+  <input type="text" id="searchInput" placeholder="Search employees by name...">
+  <select id="filterSelect">
+    <option value="">Filter by Department</option>
+    <option value="HR">HR</option>
+    <option value="Engineering">Engineering</option>
+    <option value="Marketing">Marketing</option>
+  </select>
+  <select id="sortSelect">
+    <option value="">Sort by</option>
+    <option value="name">Name</option>
+    <option value="age">Age</option>
+    <option value="department">Department</option>
+  </select>
+  <ul id="employeeList"></ul>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // DOM elements
+      const employeeForm = document.getElementById('employeeForm');
+      const employeeName = document.getElementById('employeeName');
+      const employeeAge = document.getElementById('employeeAge');
+      const employeeDepartment = document.getElementById('employeeDepartment');
+      const employeeList = document.getElementById('employeeList');
+      const searchInput = document.getElementById('searchInput');
+      const filterSelect = document.getElementById('filterSelect');
+      const sortSelect = document.getElementById('sortSelect');
+
+      let employees = [];
+
+      // Event: Add Employee
+      employeeForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = employeeName.value.trim();
+        const age = parseInt(employeeAge.value.trim(), 10);
+        const department = employeeDepartment.value.trim();
+        if (name !== '' && !isNaN(age) && department !== '') {
+          addEmployee(name, age, department);
+          employeeName.value = '';
+          employeeAge.value = '';
+          employeeDepartment.value = '';
+        }
+      });
+
+      // Function: Add Employee
+      function addEmployee(name, age, department) {
+        const employee = { name, age, department };
+        employees.push(employee);
+        displayEmployees();
+      }
+
+      // Function: Display Employees
+      function displayEmployees() {
+        const filteredEmployees = filterEmployees(employees, filterSelect.value);
+        const sortedEmployees = sortEmployees(filteredEmployees, sortSelect.value);
+        employeeList.innerHTML = sortedEmployees.map(employee => {
+          return `
+            <li class="employee-item">
+              <span>${employee.name} (${employee.age}) - ${employee.department}</span>
+              <button onclick="deleteEmployee('${employee.name}')"> ❌</button>
+            </li>
+          `;
+        }).join('');
+      }
+
+      // Function: Delete Employee
+      window.deleteEmployee = function(name) {
+        employees = employees.filter(employee => employee.name !== name);
+        displayEmployees();
+      }
+
+      // Event: Search Employees
+      searchInput.addEventListener('keyup', function() {
+        const query = searchInput.value.trim().toLowerCase();
+        displayFilteredEmployees(query);
+      });
+
+      // Function: Display Filtered Employees
+      function displayFilteredEmployees(query) {
+        const filteredEmployees = employees.filter(employee => 
+          employee.name.toLowerCase().includes(query)
+        );
+        displayEmployees(filteredEmployees);
+      }
+
+      // Event: Filter Employees
+      filterSelect.addEventListener('change', function() {
+        displayEmployees();
+      });
+
+      // Event: Sort Employees
+      sortSelect.addEventListener('change', function() {
+        displayEmployees();
+      });
+
+      // Function: Filter Employees
+      function filterEmployees(employees, department) {
+        if (department === '') return employees;
+        return employees.filter(employee => employee.department === department);
+      }
+
+      // Function: Sort Employees
+      function sortEmployees(employees, criterion) {
+        switch (criterion) {
+          case 'name':
+            return employees.sort((a, b) => a.name.localeCompare(b.name));
+          case 'age':
+            return employees.sort((a, b) => a.age - b.age);
+          case 'department':
+            return employees.sort((a, b) => a.department.localeCompare(b.department));
+          default:
+            return employees;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
